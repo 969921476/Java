@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: crowd-auth
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 192.168.31.130
+  session:
+    store-type: redis                  #session 共享加入
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+short:
+  message:
+    app-code: ab39bc4587124813b35c6781e0175f7a
+    host: https://smsmsgs.market.alicloudapi.com
+    method: GET
+    path: /sms/
+    skin: 10
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+

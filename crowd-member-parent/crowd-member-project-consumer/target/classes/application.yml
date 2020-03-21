@@ -1,0 +1,30 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: crowd-project
+  redis:
+    host: 192.168.31.130
+  session:
+    store-type: redis
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+# 阿里云OSS
+aliyun:
+  oss:
+    access-key-id: LTAI4FxMbeM9HV3wkwvu7cep
+    access-key-secret: fUvc3ad24QPprOr31avEx5ekZkvmTg
+    bucket-admain: http://cjnabt.oss-cn-shenzhen.aliyuncs.com
+    bucket-name: cjnabt
+    end-point: http://oss-cn-shenzhen.aliyuncs.com
+
+
+
+#用户登录名称 cjnoss@1221358581345098.onaliyun.com
+#AccessKey ID LTAI4FxMbeM9HV3wkwvu7cep
+#AccessKeySecret fUvc3ad24QPprOr31avEx5ekZkvmTg

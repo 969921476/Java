@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.crowd</groupId>
+    <artifactId>crowd-member-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <!-- 监控器 -->
+        <module>crowd-member-eureka</module>
+        <!-- 实体类 -->
+        <module>crowd-member-entity</module>
+        <!-- 数据库 -->
+        <module>crowd-member-mysql-provider</module>
+        <!-- Redis -->
+        <module>crowd-member-redis-provider</module>
+        <!-- 会员 -->
+        <module>crowd-member-authentication-consumer</module>
+        <!-- 项目维护 -->
+        <module>crowd-member-project-consumer</module>
+        <!-- 订单 -->
+        <module>crowd-member-order-consumer</module>
+        <!-- 支付 -->
+        <module>crowd-member-pay-consumer</module>
+        <!-- 网关 -->
+        <module>crowd-member-zuul</module>
+        <!-- API模块 -->
+        <module>crowd-member-api</module>
+    </modules>
+
+    <!-- 配置在父工程中要管理的依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 导入 SpringCloud 需要使用的依赖信息 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR2</version>
+                <type>pom</type>
+                <!-- import 依赖范围表示将 spring-cloud-dependencies 包中的依赖信息导入 -->
+                <scope>import</scope>
+            </dependency>
+            <!-- 导入 SpringBoot 需要使用的依赖信息 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.5</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>

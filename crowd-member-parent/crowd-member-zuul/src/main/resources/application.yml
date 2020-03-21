@@ -1,0 +1,27 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+zuul:
+  ignored-services: "*"
+  sensitive-headers: "*"
+  routes:
+    crowd-portal:
+      service-id: crowd-auth
+      path: /**
+    crowd-project:
+      service-id: crowd-project
+      path: /project/**
+spring:
+  application:
+    name: crowd-zuul
+  redis:
+    host: 192.168.31.130
+  session:
+    store-type: redis
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
